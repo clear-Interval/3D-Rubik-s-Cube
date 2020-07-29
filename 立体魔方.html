@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* background-color: #2f3542; */
+            background: black;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .main {
+            width: 250px;
+            height: 250px;
+            transform-style: preserve-3d;
+            animation: rotate-cube 10s ease-in-out infinite;
+        }
+
+        .main>div {
+            width: 250px;
+            height: 250px;
+            background-size: cover;
+            background-position: center center;
+            opacity: 0.8;
+            position: absolute;
+        }
+
+        /* 前 */
+        .main .img1 {
+            background-image: url(./img/01.jpg);
+            transform: translateZ(125px);
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px #fff,
+                        -3px -3px 10px skyblue;
+        }
+
+        /* 右 */
+        .main .img2 {
+            background-image: url(./img/02.jpg);
+            transform: rotateY(90deg) translateZ(125px);
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px #fff,
+                        -3px -3px 10px skyblue;
+        }
+
+        /* 左 */
+        .main .img3 {
+            background-image: url(./img/03.jpg);
+            transform: rotateY(-90deg) translateZ(125px);
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px #fff,
+                        -3px -3px 10px skyblue;
+        }
+
+        /* 下 */
+        .main .img4 {
+            background-image: url(./img/04.jpg);
+            transform: rotateX(90deg) translateZ(125px);
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px #fff,
+                        -3px -3px 10px skyblue;
+        }
+
+        /* 上 */
+        .main .img5 {
+            background-image: url(./img/05.jpg);
+            transform: rotateX(-90deg) translateZ(125px);
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px #fff,
+                        -3px -3px 10px skyblue;
+        }
+
+        /* 后 */
+        .main .img6 {
+            background-image: url(./img/07.jpg);
+            transform: rotateY(180deg) translateZ(125px);
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px #fff,
+                        -3px -3px 10px skyblue;
+        }
+
+        @keyframes rotate-cube {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+
+            20% {
+                /* 右面图片 */
+                transform: rotateY(-90deg);
+            }
+
+            40% {
+                /* 上 */
+                transform: rotateX(-90deg);
+            }
+
+            60% {
+                /* 左 */
+                transform: rotateY(90deg);
+            }
+
+            80% {
+                /* 下 */
+                transform: rotateX(90deg);
+            }
+
+            100% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="img1"></div>
+            <div class="img2"></div>
+            <div class="img3"></div>
+            <div class="img4"></div>
+            <div class="img5"></div>
+            <div class="img6"></div>
+        </div>
+    </div>
+</body>
+
+</html>
